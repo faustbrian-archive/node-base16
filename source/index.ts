@@ -1,7 +1,7 @@
-import { base16 } from "rfc4648";
+import { encoding } from "bcrypto";
 
 export const encode = (content: string): string =>
-  base16.stringify(Buffer.from(content));
+  encoding.base16.encode(Buffer.from(content));
 
 export const decode = (content: string): Buffer =>
-  Buffer.from(base16.parse(content));
+  encoding.base16.decode(content);
